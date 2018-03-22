@@ -1,0 +1,29 @@
+Ticket ID,Section,Case
+STOR-75,FE,Draw box within a box
+STOR-75,FE,Draw a box overlapping with another box
+STOR-75,FE,Provide warning when trying to draw a box within a box
+STOR-75,FE,Provide warning when trying to draw a box overlapping with another box
+,,
+STOR-76,FE,Draw box and zoom in
+STOR-76,FE,Draw box and zoom out
+,,
+STOR-37,FE,Click on the Vertical Slice tool
+STOR-37,FE,Cancel the Vertical Slice tool by pressing the tool icon
+STOR-37,FE,Cancel the Vertical Slice tool
+STOR-37,FE,Vertical Slice tool disabled unless box drawn
+STOR-37,FE,Select Vertical Slice tool and click on area outside of the box
+STOR-37,FE,Select Vertical Slice tool and hover on bounded area within the box
+STOR-37,FE,Click on the Horizontal Slice tool
+STOR-37,FE,Cancel the Horizontal Slice tool by pressing the tool icon
+STOR-37,FE,Cancel the Horizontal Slice tool
+STOR-37,FE,Horizontal Slice tool disabled unless box drawn
+STOR-37,FE,Select Horizontal Slice tool and click on area outside of the box
+STOR-37,FE,Select Horizontal Slice tool and hover on bounded area within the box
+STOR-37,FE,Draw a vertical slice
+STOR-37,FE,Draw a horizontal slice
+STOR-37,FE,Draw a vertical slice within a horizontal slice
+STOR-37,FE,Draw a horizontal slice wihtin a vertical slice
+STOR-37,FE,Draw a vertical slice over another vertical slice
+STOR-37,FE,Draw a horizontal slice over another horizontal slice
+STOR-37,FE,Draw more than one box and draw vertical lines on each box
+STOR-37,FE,Draw more than one box and draw horizontal lines on each box

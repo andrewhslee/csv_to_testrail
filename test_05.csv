@@ -1,0 +1,10 @@
+Ticket ID,Section,Case,Expected
+Pre-Release,Layout changes,Add a page to flyer_run,Page seen in slice and wayfinding/qc ONLY
+Pre-Release,Layout changes,Add a page to a flyer,Page seen in all UIS
+Pre-Release,Layout changes,Add a flyer with same pages,"Two sliceQC tasks, two spotcheck urls"
+Pre-Release,Layout changes,Remove a page from flyer,Page still seen in slice and waydinding/qc but no in slice_qc or spotcheck
+Pre-Release,Layout changes,Remove a page from the flyer_run,Page is no longer seen anywhere
+Pre-Release,Layout changes,All pages in the flyer run are replaced,
+Pre-Release,Layout changes,Indexes are correct,
+
+

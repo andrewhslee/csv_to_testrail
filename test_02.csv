@@ -1,0 +1,2 @@
+Ticket ID,Section,Test Case Name,Expected Result
+STOR-34,FE - Slicing Tool,Pass correct flyer id for the Story Creation view via url,Story is created,

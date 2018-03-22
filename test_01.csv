@@ -1,0 +1,7 @@
+Ticket ID,Section,Case,Expected
+STOR-61,,Draw one box on the flyer,box should show up on preview live
+STOR-61,,Draw more than one box on the flyer,i.e. 2 boxes - box should show up on preview live
+STOR-61,,Scroll up the Preview,
+STOR-61,,Scroll down the Preview,
+STOR-61,,Draw box in minimum zoom state,render a res that's appropirate to the preview - independent on zoom level on flyer
+STOR-61,,Draw box in maximum zoom state,render a res that's appropirate to the preview - independent on zoom level on flyer

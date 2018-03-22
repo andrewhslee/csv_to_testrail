@@ -1,0 +1,21 @@
+Ticket ID,Section,Case
+STOR-37,Tool,Click on the Vertical Slice tool
+STOR-37,Tool,Cancel the Vertical Slice tool by pressing the tool icon
+STOR-37,Tool,Cancel the Vertical Slice tool
+STOR-37,Tool,Vertical Slice tool disabled unless box drawn
+STOR-37,Tool,Select Vertical Slice tool and click on area outside of the box
+STOR-37,Tool,Select Vertical Slice tool and hover on bounded area within the box
+STOR-37,Tool,Click on the Horizontal Slice tool
+STOR-37,Tool,Cancel the Horizontal Slice tool by pressing the tool icon
+STOR-37,Tool,Cancel the Horizontal Slice tool
+STOR-37,Tool,Horizontal Slice tool disabled unless box drawn
+STOR-37,Tool,Select Horizontal Slice tool and click on area outside of the box
+STOR-37,Tool,Select Horizontal Slice tool and hover on bounded area within the box
+STOR-37,Tool,Draw a vertical slice
+STOR-37,Tool,Draw a horizontal slice
+STOR-37,Tool,Draw a vertical slice within a horizontal slice
+STOR-37,Tool,Draw a horizontal slice wihtin a vertical slice
+STOR-37,Tool,Draw a vertical slice over another vertical slice
+STOR-37,Tool,Draw a horizontal slice over another horizontal slice
+STOR-37,Tool,Draw more than one box and draw vertical lines on each box
+STOR-37,Tool,Draw more than one box and draw horizontal lines on each box

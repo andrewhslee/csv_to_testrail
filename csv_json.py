@@ -24,14 +24,14 @@ def main(argv):
     else:
         print "Error: Must enter a file name"
         sys.exit(1)
-    read = read_csv(input_file)
+    readFile = read_csv(input_file)
     suites = client.send_get('get_suites/' + str(PROJECT_ID))
     suite_names_id = {}
     for s in suites:
         suite_names_id[s['name'].strip()] = s['id']
-    json_format = json.loads(read)
+    json_format = json.loads(readFile)
     i = ''
-    print read
+    print readFile
     print "This is how your csv turned into json."
     # try:
     #     i = input ("Enter to continue")
@@ -39,32 +39,29 @@ def main(argv):
     #     i = None
     # if input == None:
     #     print "here"
+    currSection = ''
+    currSuite = ''
+    suite_id = 0
+    section_id = 0
     for test in json_format:
         if test[SUITE_COL] != '':
-            if test[SUITE_COL] not in suite_names_id:
-                id = create_suite(test[SUITE_COL])
-                suite_names_id[test[SUITE_COL]] = id
-            
-            suite_id = suite_names_id[test[SUITE_COL]]
-            sections = client.send_get('get_sections/' + str(PROJECT_ID) + '&suite_id=' + str(suite_id))
-            section_names_id = {}
-            for s in sections:
-                if s['name'] not in section_names_id:
-                    section_names_id[s['name']] = s['id']
+            currSuite = test[SUITE_COL]
+        
+        if currSuite in suite_names_id:
+            print suite_names_id
+            suite_id = suite_names_id[currSuite]
+            if test[SECTION_COL] != '':
+                currSection = test[SECTION_COL]
+                if get_section_id(currSection, suite_id) == None:
+                    section_id = create_section(currSection, suite_id)
                 else:
-                    pass
-            if test[SECTION_COL] == "":
-                create_section("Cases", suite_id)
-                section_id = section_names_id[test[SECTION_COL]]
-                add_to_section(None, suite_id, test[CASE_COL], test[EXPECTED_COL])
-            else:
-                if test[SECTION_COL].strip() not in section_names_id:
-                    create_section(test[SECTION_COL], suite_id)
-                    section_id = section_names_id[test[SECTION_COL]]
-                    add_to_section(section_id, suite_id, test[CASE_COL], test[EXPECTED_COL])
-                else:
-                    section_id = section_names_id[test[SECTION_COL]]
-                    add_to_section(section_id, suite_id, test[CASE_COL], test[EXPECTED_COL])
+                    section_id = get_section_id(currSection, suite_id)
+        else:
+            suite_id = create_suite(currSuite)
+            currSection = test[SECTION_COL]
+            section_id = create_section(currSection, suite_id)
+
+        add_to_section(section_id, suite_id, test[CASE_COL], test[EXPECTED_COL])
            
             
 #Read CSV File
@@ -87,7 +84,8 @@ def create_section(section_name, suite_id):
         'suite_id' : suite_id,
         'name' : section_name, 
     }
-    client.send_post('add_section/76', data)
+    resp = client.send_post('add_section/76', data)
+    return resp['id']
     
 
 def add_to_section(section_id, suite_id, case_name, case_expected = None, case_instructions = None):
@@ -108,12 +106,6 @@ def add_to_section(section_id, suite_id, case_name, case_expected = None, case_i
             client.send_post('update_case/' + str(c['id']), data)
     else:
         client.send_post('add_case/' + str(section_id), data)
-
-def get_suide_id(suite_name):
-     suites = client.send_get('get_suites/'+ str(PROJECT_ID))
-     for s in suites:
-         if s['name'] == suite_name:
-             return s['id']
 
 def get_section_id(section_name, suite_id):
     sections = client.send_get('get_sections/' + str(PROJECT_ID) + '&suite_id=' + str(suite_id))
